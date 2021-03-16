@@ -10,23 +10,40 @@
 </head>
 <body>
     <section>
+    <?php
+     $data = array();
+     $dir = 'video';
+     $files = scandir($dir, 0);
+     for($i = 0; $i < count($files); $i++)
+        print $files[$i]."<br>";
+    ?>
         <video class="video"id="slider" autoplay muted loop> 
-            <source src="video/8.avi" type="video/mp4">
+            <source src="video/test.mp4" type="video/mp4">
         </video>
         <ul class="navigation">
-           <li class="buttonsimages" onclick="videoUrl('video/1.mp4')">1</li>
-           <li class="buttonsimages" onclick="videoUrl('video/2.mp4')">2</li>
-           <li class="buttonsimages" onclick="videoUrl('video/3.mp4')">3</li>
-           <li class="buttonsimages" onclick="videoUrl('video/4.mp4')">4</li>
-           <li class="buttonsimages" onclick="videoUrl('video/5.mp4')">5</li>
-           <li class="buttonsimages" onclick="videoUrl('video/6.mkv')">6</li>
-           <li class="buttonsimages" onclick="videoUrl('video/7.mp4')">7</li>
-           <li class="buttonsimages" onclick="videoUrl('video/8.avi')">8</li>
-           <li class="buttonsimages" onclick="videoUrl('video/9.mp4')">9</li>
-           <li class="buttonsimages" onclick="videoUrl('video/10.mp4')">10</li>
-           <li class="buttonsimages" onclick="videoUrl('video/11.mp4')">11</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[2] }}')">1</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[3] }}')">2</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[4] }}')">3</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[5] }}')">4</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[6] }}')">5</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[7] }}')">6</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[8] }}')">7</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[9] }}')">8</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[10] }}')">9</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[11] }}')">10</li>
+           <li class="buttonsimages" onclick="videoUrl('video/' + '{{ $files[12] }}')">11</li>
         </ul>
     </section>  
+    <?php
+     $data = array();
+     $dir = 'video';
+     $files = scandir($dir, 0);
+     for($i = 2; $i < count($files); $i++)
+        print $files[$i]."<br>";
+    ?>
+
+
+    
     <script type="text/javascript">
         function videoUrl (getVideo) {
             document.getElementById("slider").src = getVideo;
